@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+
+    /* Background: warm off-white */
+    --background: 0.97 0.008 255;
+    --foreground: 0.16 0.035 265;
+
+    /* Cards: pure white with subtle shadow */
+    --card: 1 0 0;
+    --card-foreground: 0.16 0.035 265;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.16 0.035 265;
+
+    /* Primary: vivid violet */
+    --primary: 0.45 0.24 270;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary */
+    --secondary: 0.93 0.025 260;
+    --secondary-foreground: 0.3 0.06 265;
+
+    /* Muted */
+    --muted: 0.94 0.012 258;
+    --muted-foreground: 0.52 0.04 265;
+
+    /* Accent: bright cyan */
+    --accent: 0.92 0.06 215;
+    --accent-foreground: 0.3 0.12 215;
+
+    /* Destructive */
+    --destructive: 0.57 0.22 27;
+    --destructive-foreground: 0.98 0 0;
+
+    /* Success */
+    --success: 0.6 0.18 148;
+    --success-foreground: 0.98 0 0;
+
+    /* Warning */
+    --warning: 0.76 0.17 58;
+    --warning-foreground: 0.98 0 0;
+
+    --border: 0.9 0.014 258;
+    --input: 0.9 0.014 258;
+    --ring: 0.45 0.24 270;
+
+    /* Charts — vibrant spectrum */
+    --chart-1: 0.55 0.26 270;
+    --chart-2: 0.58 0.2 215;
+    --chart-3: 0.6 0.19 148;
+    --chart-4: 0.72 0.17 55;
+    --chart-5: 0.62 0.24 22;
+
+    /* Sidebar — deep navy-indigo gradient feel */
+    --sidebar: 0.18 0.07 268;
+    --sidebar-foreground: 0.92 0.02 258;
+    --sidebar-primary: 0.72 0.2 55;
+    --sidebar-primary-foreground: 0.16 0.05 65;
+    --sidebar-accent: 0.26 0.09 268;
+    --sidebar-accent-foreground: 0.95 0.01 258;
+    --sidebar-border: 0.28 0.08 268;
+    --sidebar-ring: 0.6 0.2 270;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui,
+      sans-serif;
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: 0 1px 3px 0 oklch(0 0 0 / 0.07), 0 1px 2px -1px
+      oklch(0 0 0 / 0.05);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
